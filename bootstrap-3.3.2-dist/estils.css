@@ -30,3 +30,40 @@
     background-color: #ffdb00;
 }
 
+.hidden {
+     visibility: hidden;
+  }
+
+.visible {
+    visibility: visible;
+  }
+
+.frame {
+    position: absolute;
+  }
+
+.boto{
+    text-decoration:none;
+    font-weight: 600;
+    font-size: 500px;
+    color: black;
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left:120px;
+    padding-right:120px;
+    background-color: transparent;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    }
+
+.boto1{
+    padding-left:50px;
+    padding-right:50px;
+    }
+
+
+.boto:hover{
+    opacity: 0.6;
+    text-decoration: none;
+  }
