@@ -2,8 +2,15 @@
 <html>
 
 <head>
+<style>
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+</style>
 <header>
-<h1><MARQUEE BGCOLOR="#FF7070" WIDTH=30% HEIGHT=40>JUEGO 3 EN RAYA</MARQUEE></h1>
+<h1><MARQUEE BGCOLOR="#FF7070" WIDTH=66.5% HEIGHT=40>TIK TAK TOE</MARQUEE></h1>
 </header> 
 </head>
 <body>
@@ -12,34 +19,34 @@
 
 
  <tr>
-    <td style="border-style:solid;"><img src="http://www.movieonmovil.com/data/thumbf//176x220/Abstracto1.jpg" width="96" Height="128" id="c0" onclick="box(0)" /></td>  
-    <td style="border-style:solid;"><img src="http://www.movieonmovil.com/data/thumbf//176x220/Abstracto1.jpg" width="96" Height="128" id="c1" onclick="box(1)" /></td>  
-    <td style="border-style:solid;"><img src="http://www.movieonmovil.com/data/thumbf//176x220/Abstracto1.jpg" width="96" Height="128" id="c2" onclick="box(2)" /></td>  
+    <td style="border-style:solid;"><img src="imatges/fons.jpg" width="300" Height="450" id="c0" onclick="box(0)" /></td>  
+    <td style="border-style:solid;"><img src="imatges/fons.jpg" width="300" Height="450" id="c1" onclick="box(1)" /></td>  
+    <td style="border-style:solid;"><img src="imatges/fons.jpg" width="300" Height="450" id="c2" onclick="box(2)" /></td>  
  </tr>
 
  <tr>
-    <td style="border-style:solid;"><img src="http://www.movieonmovil.com/data/thumbf//176x220/Abstracto1.jpg" width="96" Height="128" id="c3" onclick="box(3)" /></td>  
-    <td style="border-style:solid;"><img src="http://www.movieonmovil.com/data/thumbf//176x220/Abstracto1.jpg" width="96" Height="128" id="c4" onclick="box(4)" /></td>  
-    <td style="border-style:solid;"><img src="http://www.movieonmovil.com/data/thumbf//176x220/Abstracto1.jpg" width="96" Height="128" id="c5" onclick="box(5)" /></td>  
+    <td style="border-style:solid;"><img src="imatges/fons.jpg" width="300" Height="450" id="c3" onclick="box(3)" /></td>  
+    <td style="border-style:solid;"><img src="imatges/fons.jpg" width="300" Height="450" id="c4" onclick="box(4)" /></td>  
+    <td style="border-style:solid;"><img src="imatges/fons.jpg" width="300" Height="450" id="c5" onclick="box(5)" /></td>  
  </tr>
 
  <tr>
-    <td style="border-style:solid;"><img src="http://www.movieonmovil.com/data/thumbf//176x220/Abstracto1.jpg" width="96" Height="128" id="c6" onclick="box(6)" /></td>  
-    <td style="border-style:solid;"><img src="http://www.movieonmovil.com/data/thumbf//176x220/Abstracto1.jpg" width="96" Height="128" id="c7" onclick="box(7)" /></td>  
-    <td style="border-style:solid;"><img src="http://www.movieonmovil.com/data/thumbf//176x220/Abstracto1.jpg" width="96" Height="128" id="c8" onclick="box(8)" /></td>  
+    <td style="border-style:solid;"><img src="imatges/fons.jpg" width="300" Height="450" id="c6" onclick="box(6)" /></td>  
+    <td style="border-style:solid;"><img src="imatges/fons.jpg" width="300" Height="450" id="c7" onclick="box(7)" /></td>  
+    <td style="border-style:solid;"><img src="imatges/fons.jpg" width="300" Height="450" id="c8" onclick="box(8)" /></td>  
  </tr>
 
 
  <tr>
-    <th>Jugador 1</th>  
+    <th><h2>Jugador 1</h2></th>  
     <td></td>  
-    <th>Jugador 2</th>  
+    <th><h2>Jugador 2</h2></th>  
  </tr>
 
  <tr>
-    <td><img src="http://images.coveralia.com/audio/d/Def_Leppard-X-Frontal.jpg" width="80" Height="100"/></td>  
+    <td><img src="imatges/creu.png" width="200" Height="200" style="width:50%;"/></td>  
     <td><input type="button" value="Reiniciar Partida" id="reset" onclick="reiniciar()" onmouseout="suelta()" /></td>  
-    <td><img src="http://simexsa.com/images/Opera_O.png" width="80" Height="100"/></td>  
+    <td><img src="imatges/circulo.png" width="200" Height="200" style="width:50%;"/></td>  
  </tr>
 
 </table>
@@ -52,7 +59,7 @@
 
 <script type="text/javascript">
 
- var img='http://images.coveralia.com/audio/d/Def_Leppard-X-Frontal.jpg' ;
+ var img="imatges/creu.png"
  var turno=1;
  var arreglo = new Array();
  var jug1=0;
@@ -69,24 +76,24 @@
     if(arreglo[pos]==-1){
      
      if(turno==1){
-      if(img=='http://images.coveralia.com/audio/d/Def_Leppard-X-Frontal.jpg'){
+      if(img=="imatges/creu.png"){
         document.getElementById('c'+pos).src=img;
 	arreglo[pos]=1;
         turno=2;
-	img='http://simexsa.com/images/Opera_O.png';
+	img="imatges/circulo.png";
       }
       
      }else if(turno==2){ 
-      if(img=='http://simexsa.com/images/Opera_O.png'){
+      if(img=="imatges/circulo.png"){
        document.getElementById('c'+pos).src=img;
        arreglo[pos]=0;
        turno=1;
-       img='http://images.coveralia.com/audio/d/Def_Leppard-X-Frontal.jpg' ;
+       img="imatges/creu.png" ;
       }
 
      }
 
-    }else{ alert('Posicion ocupada!'); }
+    }else{ alert("Posició ocupada!"); }
     
 
 
@@ -194,7 +201,7 @@
   document.getElementById('reset');
 
   for(i=0; i<=8; i++){
-     document.getElementById('c'+i).src="http://www.movieonmovil.com/data/thumbf//176x220/Abstracto1.jpg";
+     document.getElementById('c'+i).src="imatges/fons.jpg";
   }
 
   
