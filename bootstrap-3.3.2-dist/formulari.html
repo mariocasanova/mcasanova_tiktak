@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pàgina Mario</title>
-    <script type="text/javascript" src="validarCamps.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="estils.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -15,38 +14,44 @@
 	function validar()
 	{
         var nombre=document.forms.formulario.nombre;
-        var codigo=document.forms.formulario.apellidos;
- 
-        if(nombre.value.length>0)
-        {
-            // el nombre tiene mas de un caracter
-            nombre.style.borderColor="#808080";
-            var nombreOk=true;
-        }else{
-            // el nombre es incorrecto
-            alert("mumal");
-            nombre.style.borderColor="#ff0000";
-            var nombreOk=false;
+        var apellidos=document.forms.formulario.apellidos;
+        var edad=document.forms.formulario.edad;
+        var nif=document.forms.formulario.nif;
+        var email=document.forms.formulario.email;
+        var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+        
+         if(nombre == null || nombre.length == 0 || /^\s+$/.test(nombre)){
+             nombre.style.borderColor="#ff0000";
+          alert('ERROR: El campo nombre no debe ir vacío o lleno de solamente espacios en blanco');
+          return false;
+        }
+        
+        
+         if(apellidos == null || apellidos.length == 0 || /^\s+$/.test(apellidos)){
+             apellidos.style.borderColor="#ff0000";
+          alert('ERROR: El campo apellidos no debe ir vacío o lleno de solamente espacios en blanco');
+          return false;
+        }
+
+        if(edad == null || edad.length == 0 || isNaN(edad)){
+            edad.style.borderColor="#ff0000";
+          alert('ERROR: Debe ingresar una edad');
+          return false;
+        }
+
+        if(!(/\S+@\S+\.\S+/.test(email))){
+            email.style.borderColor="#ff0000";
+          alert('ERROR: Debe escribir un correo válido');
+          return false;
         }
  
-        if(codigo.value.length==4)
-        {
-            // el codigo tiene los 4 digitos
-            codigo.style.borderColor="#808080";
-            var codigoOk=true;
-        }else{
-            // el codigo es incorrecto
-            alert("mumalmumal");
-            codigo.style.borderColor="#ff0000";
-            var codigoOk=false;
+        if(!(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(nif))) {
+            nif.style.borderColor="#ff0000";
+            alert("Nif incorrecte"); 
+            return false;
         }
- 
-        // Si el nombre y el código son correctos...
-        if(nombreOk && codigoOk)
-            return true;
- 
-        // Si devuelve false, no permite que se envie el formulario
-        return false;
+        
+        return true;
 	}
 	</script>    
     
@@ -112,15 +117,15 @@ legend{
 <legend class="small">Creacio usuari TIK TAK TOE</legend>
 <form name="formulario" id="formulario" method="get" align="center" onsubmit="return validar();">
   <label for="nombre">Nom:</label>
-  <input type="text" name="nombre" id="nombre" onkeyup=validar();/>
+  <input type="text" name="nombre" id="nombre"/>
   <label for="apellidos">Cognoms:</label>
-  <input type="text" name="apellidos" id="apellidos" onkeyup=validar();/>
+  <input type="text" name="apellidos" id="apellidos"/>
   <label for="edad">Edat:</label>
-  <input name="edad" type="text" id="edad" maxlength="3" />
+  <input name="edad" type="text" id="edad" maxlength="3"/>
   <label for="nif">NIF:</label>
-  <input name="nif" type="text" id="nif" />
+  <input name="nif" type="text" id="nif"/>
   <label for="email">E-mail:</label>
-  <input name="email" type="text" id="mail" />
+  <input name="email" type="text" id="email"/>
   <input type="reset" name="limpiar" id="button" value="Llimpiar" class="button213"/>
 <input id="button" type="submit" name="button" value="Enviar" class="button21"/>
 </form> 
