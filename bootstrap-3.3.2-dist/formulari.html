@@ -5,19 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pàgina Mario</title>
-    <script type="text/javascript" src="navegador.js"></script>
+    <script type="text/javascript" src="validarCamps.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <link href="estils.css" rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Formulari Usuari</title>
-    
-<script type="text/javascript">
-function myFunction(){
+<title>Formulari Usuari</title> 
 
-  alert("Formulari enviat correctament!");
-  window.open ("index.html","mywindow");
-}
-</script>
+<script>
+	function validar()
+	{
+        var nombre=document.forms.formulario.nombre;
+        var codigo=document.forms.formulario.apellidos;
+ 
+        if(nombre.value.length>0)
+        {
+            // el nombre tiene mas de un caracter
+            nombre.style.borderColor="#808080";
+            var nombreOk=true;
+        }else{
+            // el nombre es incorrecto
+            alert("mumal");
+            nombre.style.borderColor="#ff0000";
+            var nombreOk=false;
+        }
+ 
+        if(codigo.value.length==4)
+        {
+            // el codigo tiene los 4 digitos
+            codigo.style.borderColor="#808080";
+            var codigoOk=true;
+        }else{
+            // el codigo es incorrecto
+            alert("mumalmumal");
+            codigo.style.borderColor="#ff0000";
+            var codigoOk=false;
+        }
+ 
+        // Si el nombre y el código son correctos...
+        if(nombreOk && codigoOk)
+            return true;
+ 
+        // Si devuelve false, no permite que se envie el formulario
+        return false;
+	}
+	</script>    
     
 <style type="text/css">
 label{
@@ -79,19 +110,19 @@ legend{
 <div class="container" align="center">
 <fieldset>
 <legend class="small">Creacio usuari TIK TAK TOE</legend>
-<form name="formulario" id="formulario" method="get" align="center">
+<form name="formulario" id="formulario" method="get" align="center" onsubmit="return validar();">
   <label for="nombre">Nom:</label>
-  <input type="text" name="nombre" id="nombre" />
+  <input type="text" name="nombre" id="nombre" onkeyup=validar();/>
   <label for="apellidos">Cognoms:</label>
-  <input type="text" name="apellidos" id="apellidos" />
+  <input type="text" name="apellidos" id="apellidos" onkeyup=validar();/>
   <label for="edad">Edat:</label>
   <input name="edad" type="text" id="edad" maxlength="3" />
   <label for="nif">NIF:</label>
   <input name="nif" type="text" id="nif" />
   <label for="email">E-mail:</label>
-  <input name="email" type="text" id="email" />
-  <input type="reset" name="limpiar" id="button" value="Llimpiar" class="button213" />
-<input id="button" type="submit" name="button" onclick="myFunction();" value="Enviar" class="button21"/>
+  <input name="email" type="text" id="mail" />
+  <input type="reset" name="limpiar" id="button" value="Llimpiar" class="button213"/>
+<input id="button" type="submit" name="button" value="Enviar" class="button21"/>
 </form> 
 
     
