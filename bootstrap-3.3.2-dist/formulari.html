@@ -13,47 +13,60 @@
 <script>
 	function validar()
 	{
-        var nombre=document.forms.formulario.nombre;
+       // var nombre=document.forms.formulario.nombre;
+        var nombre = document.forms["formulario"]["nombre"].value;
         var apellidos=document.forms.formulario.apellidos;
         var edad=document.forms.formulario.edad;
         var nif=document.forms.formulario.nif;
         var email=document.forms.formulario.email;
+        
         var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
         
+        
          if(nombre == null || nombre.length == 0 || /^\s+$/.test(nombre)){
-             nombre.style.borderColor="#ff0000";
-          alert('ERROR: El campo nombre no debe ir vacío o lleno de solamente espacios en blanco');
-          return false;
+            nombre.style.borderColor="#ff0000";
+            alert('ERROR: El campo nombre no debe ir vacío o lleno de solamente espacios en blanco');
+            return false;
+        }else{
+            return true;
         }
         
         
-         if(apellidos == null || apellidos.length == 0 || /^\s+$/.test(apellidos)){
-             apellidos.style.borderColor="#ff0000";
-          alert('ERROR: El campo apellidos no debe ir vacío o lleno de solamente espacios en blanco');
-          return false;
+         if(apellidos == null || apellidos.length == 0 ||   /^\s+$/.test(apellidos)){
+            apellidos.style.borderColor="#ff0000";
+            alert('ERROR: El campo apellidos no debe ir vacío o lleno de solamente espacios en blanco');
+            return false;
+        }else{
+            return true;
         }
 
         if(edad == null || edad.length == 0 || isNaN(edad)){
-            edad.style.borderColor="#ff0000";
-          alert('ERROR: Debe ingresar una edad');
-          return false;
+           edad.style.borderColor="#ff0000";
+           alert('ERROR: Debe ingresar una edad');
+           return false;
+        }else{
+            return true;
         }
 
         if(!(/\S+@\S+\.\S+/.test(email))){
             email.style.borderColor="#ff0000";
-          alert('ERROR: Debe escribir un correo válido');
-          return false;
+            alert('ERROR: Debe escribir un correo válido');
+            return false;
+        }else{
+            return true;
         }
  
-        if(!(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(nif))) {
+       if(!(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(nif))) {
             nif.style.borderColor="#ff0000";
             alert("Nif incorrecte"); 
             return false;
+        }else{
+            return true;
         }
-        
         return true;
 	}
-	</script>    
+    
+</script>    
     
 <style type="text/css">
 label{
@@ -115,7 +128,8 @@ legend{
 <div class="container" align="center">
 <fieldset>
 <legend class="small">Creacio usuari TIK TAK TOE</legend>
-<form name="formulario" id="formulario" method="get" align="center" onsubmit="return validar();">
+<form action="#" onsumbit="return validar()" id="forms" name="formulario">
+    
   <label for="nombre">Nom:</label>
   <input type="text" name="nombre" id="nombre"/>
   <label for="apellidos">Cognoms:</label>
