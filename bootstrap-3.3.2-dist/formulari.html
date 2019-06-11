@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pàgina Mario</title>
+    <script type="text/javascript" src="./js/validar.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="estils.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Formulari Usuari</title>    
+    
+<style type="text/css">
+label{
+	width: 500px;
+	float:center;
+	margin-bottom:5px;	
+}
+input,select {
+	width:400px;
+	float:center;
+	margin-bottom:5px;
+}
+
+fieldset{
+	background:#81d8d0;
+	width:500px;
+	border: thick solid #e2ddda;
+}
+
+legend{
+	border-top-width: medium;
+	border-right-width: medium;
+	border-bottom-width: medium;
+	border-left-width: medium;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	background-color: #FFF;	
+}
+
+#mensajes{
+	float: center;
+	background:#33FF33;
+	width: 500px;
+}
+
+#errores{
+	float: center;
+	background:#FF6633;
+	width: 500px;
+}
+
+#intentos{
+	float: center;
+	background:#CCFF33;
+	width: 500px;
+}
+
+.error{
+	border: solid 2px #FF0000;
+
+}
+
+</style>
+</head>
+
+<body>
+<div class="container" align="center">
+<fieldset>
+<legend class="small">Creacio usuari TIK TAK TOE</legend>
+<div class="input-group">
+    
+  <label for="nombre">Nom:</label>
+  <input type="text" name="nombre" id="nombre"/>
+  <label for="apellidos">Cognoms:</label>
+  <input type="text" name="apellidos" id="apellidos"/>
+  <label for="edad">Edat:</label>
+  <input name="edad" type="text" id="edad" maxlength="3"/>
+
+    <button class="btn btn-default" type="button" onclick="validar()">Validar</button>
+</div>
+
+    
+    <div id="errors"></div>
+    <div id="intents"></div>
+     
+</fieldset>
+</div>    
+    <div class="media" align="center">
+            <a href="#">
+                <img src="imatges/logo.png" alt="logo" class="img-responsive" align="center">
+            </a>
+          <h2>Tik Tak Toe</h2>
+        <a href="index.html" width="50" Height="50" class="button21 button213">Sortir</a>
+       </div>
+</body>
+</html>
